@@ -1,17 +1,13 @@
-import Initializer from '../../src/initializer/Initializer';
+import Abstract100Initializer from './abstract/Abstract100Initializer'
 
-export default class Success100Initializer extends Initializer {
-    private static readonly _TIMEOUT: number = 100
-
-    protected _init(): void {
-        setTimeout(() => {
-            this._initResolve()
-        }, Success100Initializer._TIMEOUT)
+export default class Success100Initializer extends Abstract100Initializer {
+    protected _initResult(): void {
+        this._success = true
+        this._initResolve()
     }
 
-    protected _clear(): void {
-        setTimeout(() => {
-            this._clearResolve()
-        }, Success100Initializer._TIMEOUT)
+    protected _clearResult(): void {
+        this._success = false
+        this._clearResolve()
     }
 }
