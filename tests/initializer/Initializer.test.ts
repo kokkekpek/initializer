@@ -1,18 +1,18 @@
-import Initializer from '../../src/initializer/Initializer'
 import InitializationClearedError from '../../src/initializer/InitializationClearedError'
 import Success100Initializer from '../__override__/Success100Initializer'
 import Fail100Initializer from '../__override__/Fail100Initializer'
+import InitializerInterface from '../../src/initializer/InitializerInterface'
 
 it('init', done => {
     expect.assertions(1)
-    const initializer: Initializer = new Success100Initializer()
+    const initializer: InitializerInterface = new Success100Initializer()
     initializer.init().then(() => expect(true).toBeTruthy())
     setTimeout(done, 300)
 })
 
 it('two init', done => {
     expect.assertions(2)
-    const initializer: Initializer = new Success100Initializer()
+    const initializer: InitializerInterface = new Success100Initializer()
     initializer.init().then(() => expect(true).toBeTruthy())
     initializer.init().then(() => expect(true).toBeTruthy())
     setTimeout(done, 300)
@@ -20,14 +20,14 @@ it('two init', done => {
 
 it('clear', done => {
     expect.assertions(1)
-    const initializer: Initializer = new Success100Initializer()
+    const initializer: InitializerInterface = new Success100Initializer()
     initializer.clear().then(() => expect(true).toBeTruthy())
     setTimeout(done, 300)
 })
 
 it('two clear', done => {
     expect.assertions(2)
-    const initializer: Initializer = new Success100Initializer()
+    const initializer: InitializerInterface = new Success100Initializer()
     initializer.clear().then(() => expect(true).toBeTruthy())
     initializer.clear().then(() => expect(true).toBeTruthy())
     setTimeout(done, 300)
@@ -35,7 +35,7 @@ it('two clear', done => {
 
 it('init clear', done => {
     expect.assertions(2)
-    const initializer: Initializer = new Success100Initializer()
+    const initializer: InitializerInterface = new Success100Initializer()
     initializer.init().then(
         () => {},
         () => expect(true).toBeTruthy()
@@ -46,7 +46,7 @@ it('init clear', done => {
 
 it('init init clear', done => {
     expect.assertions(3)
-    const initializer: Initializer = new Success100Initializer()
+    const initializer: InitializerInterface = new Success100Initializer()
     initializer.init().then(
         () => {},
         () => expect(true).toBeTruthy()
@@ -61,7 +61,7 @@ it('init init clear', done => {
 
 it('init clear clear', done => {
     expect.assertions(3)
-    const initializer: Initializer = new Success100Initializer()
+    const initializer: InitializerInterface = new Success100Initializer()
     initializer.init().then(
         () => {},
         () => expect(true).toBeTruthy()
@@ -73,7 +73,7 @@ it('init clear clear', done => {
 
 it('clear init', done => {
     expect.assertions(2)
-    const initializer: Initializer = new Success100Initializer()
+    const initializer: InitializerInterface = new Success100Initializer()
     initializer.clear().then(() => expect(true).toBeTruthy())
     initializer.init().then(
         () => {},
@@ -84,14 +84,14 @@ it('clear init', done => {
 
 it('init and clear after', done => {
     expect.assertions(1)
-    const initializer: Initializer = new Success100Initializer()
+    const initializer: InitializerInterface = new Success100Initializer()
     initializer.init().then(() => initializer.clear().then(() => expect(true).toBeTruthy()))
     setTimeout(done, 300)
 })
 
 it('clear and init after', done => {
     expect.assertions(1)
-    const initializer: Initializer = new Success100Initializer()
+    const initializer: InitializerInterface = new Success100Initializer()
     initializer.clear().then(() => initializer.init().then(() => expect(true).toBeTruthy()))
     setTimeout(done, 300)
 })
@@ -102,7 +102,7 @@ it('clear and init after', done => {
  *********/
 it('Fail100Initializer fail', done => {
     expect.assertions(1)
-    const initializer: Initializer = new Fail100Initializer()
+    const initializer: InitializerInterface = new Fail100Initializer()
     initializer.init().then(
         () => {},
         (error: Error) => expect(error.message).toBe(Fail100Initializer.ERROR_MESSAGE)
@@ -112,7 +112,7 @@ it('Fail100Initializer fail', done => {
 
 it('Fail100Initializer clear fail', done => {
     expect.assertions(1)
-    const initializer: Initializer = new Fail100Initializer()
+    const initializer: InitializerInterface = new Fail100Initializer()
     initializer.init().then(
         () => {},
         (error: Error) => expect(error.message).toBe(InitializationClearedError.MESSAGE)
