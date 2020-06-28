@@ -1,4 +1,4 @@
-import PromiseExecutor from '../../src/initializer/PromiseExecutor'
+import PromiseExecutor from '../../../src/initializer/promise/PromiseExecutor'
 
 it('resolve', () => {
     expect.assertions(1)

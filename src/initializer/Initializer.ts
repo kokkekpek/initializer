@@ -1,4 +1,4 @@
-import PromisesExecutor from './PromisesExecutor'
+import PromisesExecutor from './promise/PromisesExecutor'
 import InitializationClearedError from './InitializationClearedError'
 
 export default abstract class Initializer {
