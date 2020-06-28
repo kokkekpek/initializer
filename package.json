@@ -1,0 +1,25 @@
+{
+  "name": "initializer",
+  "version": "0.1.0",
+  "description": "Classes for initialize some object like database connection before start application",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": "https://github.org/kokkekpek/initializer",
+  "author": "Kok Kek <kokkekpek@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^14.0.14",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.3",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.1"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "example": "ts-node example/"
+  }
+}
