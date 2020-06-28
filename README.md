@@ -6,7 +6,19 @@ yarn add kokkekpek/initializer#^1.0
 
 ## Use
 ```typescript
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+import {InitializerInterface, InitializerQueue} from '../'
+
+const redis: InitializerInterface = new RedisInitializer()
+const telegram: InitializerInterface = new TelegramInitializer()
+const mongo: InitializerInterface = new MongoInitializer()
+const queue: InitializerInterface = new InitializerQueue([
+    redis,
+    telegram,
+    mongo
+])
+queue.init().then(() => {
+    // ALL INITIALIZED. DO SOMETHING HERE
+})
 ```
 
 ## DEV
@@ -23,9 +35,4 @@ yarn build
 Test
 ```sh
 yarn test
-````
-
-Run example
-```sh
-yarn example
 ````
