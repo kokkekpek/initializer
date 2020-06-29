@@ -7,7 +7,7 @@ yarn add kokkekpek/initializer#^1.0
 ## Use
 Queue - initialize one by one
 ```typescript
-import {InitializerInterface, InitializerQueue} from '../'
+import {InitializerInterface, InitializerQueue} from 'initializer'
 
 const redis: InitializerInterface = new RedisInitializer()
 const telegram: InitializerInterface = new TelegramInitializer(redis)
@@ -29,7 +29,7 @@ queue.init().then(
 
 Pool - initialize all in one time
 ```typescript
-import {InitializerInterface, InitializerPool} from './'
+import {InitializerInterface, InitializerPool} from 'initializer'
 
 const one: InitializerInterface = new InitializerOne()
 const two: InitializerInterface = new InitializerTwo()
@@ -51,7 +51,7 @@ pool.init().then(
 
 Custom an initializer extends from Initializer class
 ```typescript
-import Initializer from './src/initializer/Initializer'
+import {Initializer} from 'initializer'
 
 export default class CustomInitializer extends Initializer {
     /**
