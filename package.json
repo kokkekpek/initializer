@@ -1,6 +1,6 @@
 {
   "name": "initializer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Classes for initialize some object like database connection before start application",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
